@@ -1,0 +1,21 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "remote-mcp-server",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-10",
+	"compatibility_flags": ["nodejs_compat"],
+	"kv_namespaces": [
+		{
+			"binding": "OAUTH_KV",
+			"id": "<ADD YOUR KV NAMESPACEID HERE>",
+		},
+	],
+	"observability": {
+		"enabled": true,
+	},
+	"assets": { "directory": "./static/", "binding": "ASSETS" },
+}
